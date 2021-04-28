@@ -26,7 +26,7 @@ public class AnuncioTest {
 	
 	@BeforeAll
 	public static void setupClass() {
-		System.setProperty("webdriver.chrome.silentOutput", "true");
+		System.setProperty("org.apache.commons.logging.simplelog.log.httpclient.wire", "ERROR");
 		WebDriverManager.chromedriver().setup();
 	}
 	
