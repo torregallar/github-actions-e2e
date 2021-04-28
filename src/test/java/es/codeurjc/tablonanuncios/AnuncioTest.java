@@ -57,7 +57,7 @@ public class AnuncioTest {
 		
 		driver.findElement(By.linkText("Volver al tablón")).click();
 		
-		assertNotNull(driver.findElement(By.partialLinkText("roja")));
+		assertNotNull(driver.findElement(By.partialLinkText("verde")));
 	}
 
 }
