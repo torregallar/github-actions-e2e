@@ -2,8 +2,6 @@ package es.codeurjc.tablonanuncios;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.logging.Level;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,10 +10,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
@@ -41,7 +35,8 @@ public class AnuncioTest {
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--headless");
-		options.setCapability(ChromeOptions.CAPABILITY, silentCapability());
+		options.addArguments("--disable-logging");
+		options.addArguments("--log-level=3");
 		driver = new ChromeDriver(options);
 	}
 	
@@ -67,19 +62,6 @@ public class AnuncioTest {
 		driver.findElement(By.linkText("Volver al tablón")).click();
 		
 		assertNotNull(driver.findElement(By.partialLinkText("roja")));
-	}
-
-	private DesiredCapabilities silentCapability(){
-		DesiredCapabilities caps = DesiredCapabilities.chrome();
-		LoggingPreferences logPrefs = new LoggingPreferences();
-		logPrefs.enable(LogType.PERFORMANCE, Level.INFO);
-		logPrefs.enable(LogType.PROFILER, Level.INFO);
-		logPrefs.enable(LogType.BROWSER, Level.INFO);
-		logPrefs.enable(LogType.CLIENT, Level.INFO);
-		logPrefs.enable(LogType.DRIVER, Level.INFO);
-		logPrefs.enable(LogType.SERVER, Level.INFO);
-		caps.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
-		return caps;
 	}
 
 }
