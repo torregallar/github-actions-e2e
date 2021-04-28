@@ -32,8 +32,6 @@ public class AnuncioTest {
 	@BeforeEach
 	public void setup() {
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--headless");
 		driver = new ChromeDriver(options);
 	}
