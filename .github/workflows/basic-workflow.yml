@@ -14,4 +14,4 @@ jobs:
       with:
         java-version: 11
     - name: Build native with Maven
-      run: mvn -B package -Dorg.apache.commons.logging.simplelog.log.httpclient.wire=OFF
+      run: mvn -B -Dorg.apache.commons.logging.simplelog.log.httpclient.wire=OFF package 
