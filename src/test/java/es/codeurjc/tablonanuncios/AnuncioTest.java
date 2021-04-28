@@ -35,8 +35,6 @@ public class AnuncioTest {
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--headless");
-		options.addArguments("--disable-logging");
-		options.addArguments("--log-level=3");
 		driver = new ChromeDriver(options);
 	}
 	
