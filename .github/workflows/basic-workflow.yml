@@ -14,4 +14,4 @@ jobs:
       with:
         java-version: 11
     - name: Build native with Maven
-      run: mvn -B -q package 
+      run: mvn -B package 
