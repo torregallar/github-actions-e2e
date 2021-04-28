@@ -25,6 +25,7 @@ public class AnuncioTest {
 	
 	@BeforeAll
 	public static void setupClass() {
+		System.setProperty("webdriver.chrome.silentOutput", "true");
 		WebDriverManager.chromedriver().setup();
 	}
 	

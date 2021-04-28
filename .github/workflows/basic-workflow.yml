@@ -13,9 +13,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Install Chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install google-chrome-stable
     - name: Build native with Maven
       run: mvn -B package
