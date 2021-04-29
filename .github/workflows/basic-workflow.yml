@@ -6,7 +6,13 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04, windows-2019, macos-11.0]
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
