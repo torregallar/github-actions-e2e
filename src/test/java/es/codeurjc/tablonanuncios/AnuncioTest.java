@@ -20,7 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class AnuncioTest {
 
 	@LocalServerPort
-    int port;
+	int port;
 
 	WebDriver driver;
 	
