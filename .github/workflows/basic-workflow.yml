@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -14,4 +14,4 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '17'
-      - run: mvn -B package
+      - run: mvn test
