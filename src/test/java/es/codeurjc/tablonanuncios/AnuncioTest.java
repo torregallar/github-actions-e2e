@@ -6,6 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -57,7 +59,7 @@ public class AnuncioTest {
 		
 		driver.findElement(By.linkText("Volver al tablón")).click();
 		
-		assertNotNull(driver.findElement(By.partialLinkText("Vendo moto azul")));
+		assertNotNull(driver.findElement(By.partialLinkText("Vendo moto roja")));
 	}
 
 }
