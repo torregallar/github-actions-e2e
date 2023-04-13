@@ -28,19 +28,22 @@ public class AnuncioTest {
 	public static void setupClass() {
 		WebDriverManager.chromedriver().setup();
 	}
-	
+
+
+
 	@BeforeEach
 	public void setup() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
 		driver = new ChromeDriver(options);
 	}
-	
+
+
 	@AfterEach
 	public void teardown() {
-		if(driver != null) {
-			driver.quit();
-		}
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		driver = new ChromeDriver(options);
 	}
 	
 	@Test
